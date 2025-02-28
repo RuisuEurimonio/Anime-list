@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true" class="custom-component">
+  <ion-card collapse="condense" class="container">
+    <ion-header [translucent]="true" class="header">
+      <ion-toolbar class="toolbar">
+        <ion-title size="large" class="title"
+          >Bienvenido a tu lista anime.</ion-title
+        >
+      </ion-toolbar>
+    </ion-header>
+    <div>
+      <ion-button [routerLink]="['/anime-list']" fill="outline" class="button-list">
+        Lista de animes.
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>
