@@ -1,0 +1,272 @@
+[
+  {
+    "mal_id": 1,
+    "url": "https://myanimelist.net/anime/1/Cowboy_Bebop",
+    "images": {
+      "jpg": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/4/19644.jpg",
+        "small_image_url": "https://cdn.myanimelist.net/images/anime/4/19644t.jpg",
+        "large_image_url": "https://cdn.myanimelist.net/images/anime/4/19644l.jpg"
+      },
+      "webp": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/4/19644.webp",
+        "small_image_url": "https://cdn.myanimelist.net/images/anime/4/19644t.webp",
+        "large_image_url": "https://cdn.myanimelist.net/images/anime/4/19644l.webp"
+      }
+    },
+    "title": "Cowboy Bebop",
+    "title_japanese": "カウボーイビバップ",
+    "episodes": 26,
+    "status": "Finished Airing",
+    "score": 8.75,
+    "synopsis": "Crime is timeless. By the year 2071, humanity has expanded across the galaxy, filling the surface of other planets with settlements like those on Earth. These new societies are plagued by murder, drug use, and theft, and intergalactic outlaws are hunted by a growing number of tough bounty hunters.\n\nSpike Spiegel and Jet Black pursue criminals throughout space to make a humble living. Beneath his goofy and aloof demeanor, Spike is haunted by the weight of his violent past. Meanwhile, Jet manages his own troubled memories while taking care of Spike and the Bebop, their ship. The duo is joined by the beautiful con artist Faye Valentine, odd child Edward Wong Hau Pepelu Tivrusky IV, and Ein, a bioengineered Welsh corgi.\n\nWhile developing bonds and working to catch a colorful cast of criminals, the Bebop crew's lives are disrupted by a menace from Spike's past. As a rival's maniacal plot continues to unravel, Spike must choose between life with his newfound family or revenge for his old wounds.\n\n[Written by MAL Rewrite]",
+    "background": "When Cowboy Bebop first aired in spring of 1998 on TV Tokyo, only episodes 2-3, 7-15, and 18 were broadcast, it was concluded with a recap special known as Yose Atsume Blues. This was due to anime censorship having increased following the big controversies over Evangelion, as a result most of the series was pulled from the air due to violent content. Satellite channel WOWOW picked up the series in the fall of that year and aired it in its entirety uncensored. Cowboy Bebop was not a ratings hit in Japan, but sold over 19,000 DVD units in the initial release run, and 81,000 overall. Protagonist Spike Spiegel won Best Male Character, and Megumi Hayashibara won Best Voice Actor for her role as Faye Valentine in the 1999 and 2000 Anime Grand Prix, respectively. Cowboy Bebop's biggest influence has been in the United States, where it premiered on Adult Swim in 2001 with many reruns since. The show's heavy Western influence struck a chord with American viewers, where it became a \"gateway drug\" to anime aimed at adult audiences.",
+    "genres": [
+      {
+        "mal_id": 1,
+        "type": "anime",
+        "name": "Action",
+        "url": "https://myanimelist.net/anime/genre/1/Action"
+      },
+      {
+        "mal_id": 46,
+        "type": "anime",
+        "name": "Award Winning",
+        "url": "https://myanimelist.net/anime/genre/46/Award_Winning"
+      },
+      {
+        "mal_id": 24,
+        "type": "anime",
+        "name": "Sci-Fi",
+        "url": "https://myanimelist.net/anime/genre/24/Sci-Fi"
+      }
+    ]
+  },
+  {
+    
+      "mal_id": 19815,
+      "url": "https://myanimelist.net/anime/19815/No_Game_No_Life",
+      "images": {
+        "jpg": {
+          "image_url": "https://cdn.myanimelist.net/images/anime/1074/111944.jpg",
+          "small_image_url": "https://cdn.myanimelist.net/images/anime/1074/111944t.jpg",
+          "large_image_url": "https://cdn.myanimelist.net/images/anime/1074/111944l.jpg"
+        },
+        "webp": {
+          "image_url": "https://cdn.myanimelist.net/images/anime/1074/111944.webp",
+          "small_image_url": "https://cdn.myanimelist.net/images/anime/1074/111944t.webp",
+          "large_image_url": "https://cdn.myanimelist.net/images/anime/1074/111944l.webp"
+        }
+      },
+      "title": "No Game No Life",
+      "title_japanese": "ノーゲーム・ノーライフ",
+      "episodes": 12,
+      "status": "Finished Airing",
+      "score": 8.05,
+      "synopsis": "Sixteen sentient races inhabit Disboard, a world overseen by Tet, the One True God. The lowest of the sixteen—Imanity—consists of humans, a race with no affinity for magic. In a place where everything is decided through simple games, humankind seems to have no way out of their predicament—but the arrival of two outsiders poses a change.\n\nOn Earth, stepsiblings Sora and Shiro are two inseparable shut-ins who dominate various online games under the username \"Blank.\" While notorious on the internet, the pair believe that life is merely another dull game. However, after responding to a message from an unknown user, they are suddenly transported to Disboard. The mysterious sender turns out to be Tet, who informs them about the world's absolute rules. After Tet leaves, Sora and Shiro begin their search for more information and a place to stay, taking them to Elkia—Imanity's only remaining kingdom.\n\nThere, the duo encounters Stephanie Dola, an emotional girl vying for the kingdom's sovereignty. In desperation, she attempts to regain her father's throne, but her foolhardiness makes her goal unachievable. Inspired by the girl's motivation and passion, Sora and Shiro decide to aid Stephanie in getting Elkia back on its feet, ultimately aiming to become the new rulers of the enigmatic realm.\n\n[Written by MAL Rewrite]",
+      "background": "No Game No Life adapts the first three volumes of Yuu Kamiya's light novel series of the same title.",
+      "genres": [
+        {
+          "mal_id": 4,
+          "type": "anime",
+          "name": "Comedy",
+          "url": "https://myanimelist.net/anime/genre/4/Comedy"
+        },
+        {
+          "mal_id": 10,
+          "type": "anime",
+          "name": "Fantasy",
+          "url": "https://myanimelist.net/anime/genre/10/Fantasy"
+        },
+        {
+          "mal_id": 9,
+          "type": "anime",
+          "name": "Ecchi",
+          "url": "https://myanimelist.net/anime/genre/9/Ecchi"
+        }
+      ]
+  },
+  {
+    "mal_id": 37430,
+    "url": "https://myanimelist.net/anime/37430/Tensei_shitara_Slime_Datta_Ken",
+    "images": {
+      "jpg": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/1069/123309.jpg"
+      }
+    },
+    "title": "Tensei shitara Slime Datta Ken",
+    "title_japanese": "転生したらスライムだった件",
+    "episodes": 24,
+    "status": "Finished Airing",
+    "score": 8.14,
+    "synopsis": "Thirty-seven-year-old Satoru Mikami is a typical corporate worker, who is perfectly content with his monotonous lifestyle in Tokyo, other than failing to nail down a girlfriend even once throughout his life. In the midst of a casual encounter with his colleague, he falls victim to a random assailant on the streets and is stabbed. However, while succumbing to his injuries, a peculiar voice echoes in his mind, and recites a bunch of commands which the dying man cannot make sense of. When Satoru regains consciousness, he discovers that he has reincarnated as a goop of slime...",
+    "background": "Based on the light novel written by Fuse, Tensei shitara Slime Datta Ken was serialized online between 2013 and 2016 on the Shousetsuka ni Narou website.",
+    "genres": [
+      {
+        "mal_id": 10,
+        "type": "anime",
+        "name": "Fantasy",
+        "url": "https://myanimelist.net/anime/genre/10/Fantasy"
+      },
+      {
+        "mal_id": 1,
+        "type": "anime",
+        "name": "Action",
+        "url": "https://myanimelist.net/anime/genre/1/Action"
+      }
+    ]
+  },
+  {
+    "mal_id": 39535,
+    "url": "https://myanimelist.net/anime/39535/Mushoku_Tensei__Isekai_Ittara_Honki_Dasu",
+    "images": {
+      "jpg": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/1530/117776.jpg",
+        "small_image_url": "https://cdn.myanimelist.net/images/anime/1530/117776t.jpg",
+        "large_image_url": "https://cdn.myanimelist.net/images/anime/1530/117776l.jpg"
+      },
+      "webp": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/1530/117776.webp",
+        "small_image_url": "https://cdn.myanimelist.net/images/anime/1530/117776t.webp",
+        "large_image_url": "https://cdn.myanimelist.net/images/anime/1530/117776l.webp"
+      }
+    },
+    "title": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "title_japanese": "無職転生 ～異世界行ったら本気だす～",
+    "episodes": 11,
+    "status": "Finished Airing",
+    "score": 8.36,
+    "synopsis": "Despite being bullied, scorned, and oppressed all of his life, a 34-year-old shut-in still found the resolve to attempt something heroic—only for it to end in a tragic accident. But in a twist of fate, he awakens in another world as Rudeus Greyrat, starting life again as a baby born to two loving parents.\n\nPreserving his memories and knowledge from his previous life, Rudeus quickly adapts to his new environment. With the mind of a grown adult, he starts to display magical talent that exceeds all expectations, honing his skill with the help of a mage named Roxy Migurdia. Rudeus learns swordplay from his father, Paul, and meets Sylphiette, a girl his age who quickly becomes his closest friend.\n\nAs Rudeus' second chance at life begins, he tries to make the most of his new opportunity while conquering his traumatic past. And perhaps, one day, he may find the one thing he could not find in his old world—love.",
+    "background": "Mushoku Tensei: Isekai Ittara Honki Dasu adapts chapters 1-26 of Yuka Fujikawa's manga series and volumes 1-3 of Rifujin na Magonote's light novel series of the same title.",
+    "genres": [
+      {
+        "mal_id": 2,
+        "type": "anime",
+        "name": "Adventure",
+        "url": "https://myanimelist.net/anime/genre/2/Adventure"
+      },
+      {
+        "mal_id": 8,
+        "type": "anime",
+        "name": "Drama",
+        "url": "https://myanimelist.net/anime/genre/8/Drama"
+      },
+      {
+        "mal_id": 10,
+        "type": "anime",
+        "name": "Fantasy",
+        "url": "https://myanimelist.net/anime/genre/10/Fantasy"
+      },
+      {
+        "mal_id": 9,
+        "type": "anime",
+        "name": "Ecchi",
+        "url": "https://myanimelist.net/anime/genre/9/Ecchi"
+      }
+    ]
+  },
+  {
+    "mal_id": 52991,
+    "url": "https://api.jikan.moe/v4/anime/52991/full",
+    "images": {
+      "jpg": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/1675/127908l.jpg",
+        "small_image_url": "https://cdn.myanimelist.net/images/anime/1675/127908l.jpg",
+        "large_image_url": "https://cdn.myanimelist.net/images/anime/1675/127908l.jpg"
+      },
+      "webp": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/1530/117776.webp",
+        "small_image_url": "https://cdn.myanimelist.net/images/anime/1530/117776t.webp",
+        "large_image_url": "https://cdn.myanimelist.net/images/anime/1530/117776l.webp"
+      }
+    },
+    "title": "Frieren: Más allá del final del viaje",
+    "title_japanese": "葬送のフリーレン",
+    "episodes": 24,
+    "status": "En emisión",
+    "score": 8.9,
+    "synopsis": "La maga Frieren formaba parte del grupo del héroe Himmel, quienes derrotaron al Rey Demonio tras un viaje de 10 años y devolvieron la paz al reino. Frieren es una elfa de más de mil años de vida, así que al despedirse de Himmel y sus compañeros promete que regresará para verlos y parte de viaje sola.",
+    "background": "Frieren: Más allá del final del viaje es una serie de anime basada en el manga de Kanehito Yamada y Tsukasa Abe. Producida por Madhouse, el anime se estrenó en 2023 y ha sido un éxito rotundo, obteniendo críticas excelentes y una alta puntuación en diversas plataformas.",
+    "genres": [
+      {
+        "mal_id": 2,
+        "type": "anime",
+        "name": "Aventura",
+        "url": "https://myanimelist.net/anime/genre/2/Adventure"
+      },
+      {
+        "mal_id": 8,
+        "type": "anime",
+        "name": "Drama",
+        "url": "https://myanimelist.net/anime/genre/8/Drama"
+      },
+      {
+        "mal_id": 10,
+        "type": "anime",
+        "name": "Fantasía",
+        "url": "https://myanimelist.net/anime/genre/10/Fantasy"
+      }
+    ]
+  },
+  {
+    "mal_id": 28907,
+    "url": "https://myanimelist.net/anime/28907/Re_Zero_kara_Hajimeru_Isekai_Seikatsu",
+    "images": {
+      "jpg": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/11/79410.jpg",
+        "small_image_url": "https://cdn.myanimelist.net/images/anime/11/79410t.jpg",
+        "large_image_url": "https://cdn.myanimelist.net/images/anime/11/79410l.jpg"
+      },
+      "webp": {
+        "image_url": "https://cdn.myanimelist.net/images/anime/11/79410.webp",
+        "small_image_url": "https://cdn.myanimelist.net/images/anime/11/79410t.webp",
+        "large_image_url": "https://cdn.myanimelist.net/images/anime/11/79410l.webp"
+      }
+    },
+    "title": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "title_japanese": "Re：ゼロから始める異世界生活",
+    "episodes": 25,
+    "status": "Finished Airing",
+    "score": 8.27,
+    "synopsis": "En su camino a casa desde la tienda de conveniencia, Subaru Natsuki es transportado de repente a un mundo de fantasía. Poco después de su llegada, es atacado por unos matones. Armado con solo una bolsa de comestibles y un teléfono celular que ya no funciona, es rápidamente golpeado hasta quedar al borde de la muerte. Afortunadamente, una misteriosa belleza llamada Satella, en busca de su insignia robada, lo encuentra y lo salva. Para agradecer a la honesta y bondadosa chica, Subaru se ofrece a ayudarla en su búsqueda, y más tarde esa noche, encuentra el paradero de lo que busca. Pero sin que ellos lo sepan, una fuerza mucho más oscura acecha a la pareja desde las sombras, y solo momentos después de localizar la insignia, Subaru y Satella son brutalmente asesinados. Sin embargo, Subaru se despierta de inmediato en una escena familiar: confrontado por el mismo grupo de matones, conoce a Satella nuevamente, la historia se repite inexplicablemente.",
+    "background": "Re:Zero kara Hajimeru Isekai Seikatsu adapta la serie de novelas ligeras del mismo título escrita por Tappei Nagatsuki.",
+    "genres": [
+      {
+        "mal_id": 1,
+        "type": "anime",
+        "name": "Action",
+        "url": "https://myanimelist.net/anime/genre/1/Action"
+      },
+      {
+        "mal_id": 2,
+        "type": "anime",
+        "name": "Adventure",
+        "url": "https://myanimelist.net/anime/genre/2/Adventure"
+      },
+      {
+        "mal_id": 10,
+        "type": "anime",
+        "name": "Fantasy",
+        "url": "https://myanimelist.net/anime/genre/10/Fantasy"
+      },
+      {
+        "mal_id": 37,
+        "type": "anime",
+        "name": "Psychological",
+        "url": "https://myanimelist.net/anime/genre/37/Psychological"
+      },
+      {
+        "mal_id": 41,
+        "type": "anime",
+        "name": "Thriller",
+        "url": "https://myanimelist.net/anime/genre/41/Thriller"
+      },
+      {
+        "mal_id": 62,
+        "type": "anime",
+        "name": "Isekai",
+        "url": "https://myanimelist.net/anime/genre/62/Isekai"
+      }
+    ]
+  }
+]

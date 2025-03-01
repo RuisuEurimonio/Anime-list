@@ -1,13 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>animeList</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">animeList</ion-title>
+      <ion-title> Lista de animes. </ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list *ngIf="haveAnimes; else noContent" class="flex-list">
+      <ion-item *ngFor="let anime of animeList" class="flex-item">
+        <ion-card class="card-anime">
+          <ion-card-header>
+            <ion-card-title>{{ anime.title }}</ion-card-title>
+            <ion-card-subtitle>{{ anime.title_japanese }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <img [alt]="anime.background" [src]="anime.images.jpg.image_url" />
+          </ion-card-content>
+          <ion-text class="truncate-text"> {{anime.synopsis}} </ion-text>
+        </ion-card>
+      </ion-item>
+  </ion-list>
+
+  <ng-template #noContent>
+    <ion-card collapse="condense" class="container">
+      <ion-header [translucent]="true" class="header">
+        <ion-toolbar class="toolbar">
+          <ion-title size="large" class="title"
+            >No se han encontrado animes, vuelvelo a intentar más tarde.</ion-title
+          >
+        </ion-toolbar>
+      </ion-header>
+      <div>
+        <ion-button [routerLink]="['/home']" fill="outline" class="button-list">
+          Lista de animes.
+        </ion-button>
+      </div>
+    </ion-card>
+  </ng-template>
 </ion-content>

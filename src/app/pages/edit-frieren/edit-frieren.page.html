@@ -25,8 +25,8 @@
         <ion-input type="number" [ngModel]="capitulos" (ionChange)="onChangeElement('capitulos', $event.detail.value)"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-text> Estado: </ion-text>
-        <ion-button> {{fechaEmision}} </ion-button>
+        <ion-label > Estado: </ion-label>
+        <ion-text> {{finalizado ? "Finalizado" : "En Emisión"}} </ion-text>
       </ion-item>
     </ion-list>
   </ion-card>
