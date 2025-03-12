@@ -1,40 +1,42 @@
 <ion-content [fullscreen]="true">
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-title> Lista de animes. </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-list *ngIf="haveAnimes; else noContent" class="flex-list">
-      <ion-item *ngFor="let anime of animeList" class="flex-item">
-        <ion-card class="card-anime">
-          <ion-card-header>
-            <ion-card-title>{{ anime.title }}</ion-card-title>
-            <ion-card-subtitle>{{ anime.title_japanese }}</ion-card-subtitle>
-          </ion-card-header>
-          <ion-card-content>
-            <img [alt]="anime.background" [src]="anime.images.jpg.image_url" />
-          </ion-card-content>
-          <ion-text class="truncate-text"> {{anime.synopsis}} </ion-text>
-        </ion-card>
+  <ion-card class="filter-container">
+    <ion-card-header>
+      <ion-card-title>Filtrar Animes</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Buscar Anime</ion-label>
+        <ion-input type="text" placeholder="Ej. Naruto, One Piece..."></ion-input>
       </ion-item>
-  </ion-list>
+  
+      <ion-item>
+        <ion-label>Género</ion-label>
+        <ion-select placeholder="Selecciona un género">
+          <ion-select-option value="accion">Acción</ion-select-option>
+          <ion-select-option value="aventura">Aventura</ion-select-option>
+          <ion-select-option value="comedia">Comedia</ion-select-option>
+          <ion-select-option value="drama">Drama</ion-select-option>
+          <ion-select-option value="fantasia">Fantasía</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Ordenar por</ion-label>
+        <ion-select placeholder="Selecciona">
+          <ion-select-option value="popularidad">Popularidad</ion-select-option>
+          <ion-select-option value="mejor_puntuado">Mejor Puntuado</ion-select-option>
+          <ion-select-option value="reciente">Más Reciente</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <!-- Botón para aplicar filtros -->
+      <ion-button expand="full" color="primary">Aplicar Filtros</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
 
-  <ng-template #noContent>
-    <ion-card collapse="condense" class="container">
-      <ion-header [translucent]="true" class="header">
-        <ion-toolbar class="toolbar">
-          <ion-title size="large" class="title"
-            >No se han encontrado animes, vuelvelo a intentar más tarde.</ion-title
-          >
-        </ion-toolbar>
-      </ion-header>
-      <div>
-        <ion-button [routerLink]="['/home']" fill="outline" class="button-list">
-          Lista de animes.
-        </ion-button>
-      </div>
-    </ion-card>
-  </ng-template>
+  <app-list-component></app-list-component>
+
 </ion-content>

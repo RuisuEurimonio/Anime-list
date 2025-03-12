@@ -16,16 +16,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/edit-frieren/edit-frieren.module').then( m => m.EditFrierenPageModule)
   },
   {
-    path: 'edit-frieren',
-    loadChildren: () => import('./pages/edit-frieren/edit-frieren.module').then( m => m.EditFrierenPageModule)
-  },
-  {
     path: 'anime-view',
     loadChildren: () => import('./pages/anime-view/anime-view.module').then( m => m.AnimeViewPageModule)
   },
   {
     path: 'anime-list',
     loadChildren: () => import('./pages/anime-list/anime-list.module').then( m => m.AnimeListPageModule)
+  },
+  {
+    path: 'my-list',
+    loadChildren: () => import('./pages/my-list/my-list.module').then( m => m.MyListPageModule)
   }
 ];
 

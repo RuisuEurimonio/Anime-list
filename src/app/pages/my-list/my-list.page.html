@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+
+  <app-list-component></app-list-component>
+
+  <ion-card class="info-card">
+    <ion-card-header>
+      <ion-avatar>
+        <img [src]="user.avatarUrl" alt="Usuario">
+      </ion-avatar>
+      <ion-card-title>{{ user.username }}</ion-card-title>
+      <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+          <ion-label>Se unío: {{ user.dateCreation }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="globe-outline" slot="start"></ion-icon>
+          <ion-label>País: {{ user.country }}</ion-label>
+        </ion-item>
+      </ion-list>
+      
+      <ion-button expand="full" color="primary">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        Mi perfil
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
