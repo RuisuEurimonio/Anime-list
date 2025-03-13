@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from 'src/app/data/interface/user.model';
+import { Anime } from 'src/app/data/interface/Anime.model';
+import { UserModel } from 'src/app/data/interface/User.model';
+import animeListJson from 'src/assets/data/animesList.json';
 
 @Component({
   selector: 'app-my-list',
@@ -19,6 +21,8 @@ export class MyListPage implements OnInit {
     avatarUrl: 'https://wallpapers.com/images/hd/anime-profile-picture-jioug7q8n43yhlwn.jpg'
   };
   
+  listMyAnimes : Anime[] = animeListJson.slice(0,2)
+
   constructor() { }
 
   ngOnInit() {
