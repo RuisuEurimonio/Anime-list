@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'my-list',
     loadChildren: () => import('./pages/my-list/my-list.module').then( m => m.MyListPageModule)
+  },
+  {
+    path: 'configuration-page',
+    loadChildren: () => import('./pages/configuration-page/configuration-page.module').then( m => m.ConfigurationPagePageModule)
   }
 ];
 

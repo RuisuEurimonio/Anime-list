@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-title> Configuración de la página. </ion-title>
+  </ion-toolbar>
+
+  <ion-segment>
+    <app-form (sendData)="addItem($event)"> </app-form>
+  </ion-segment>
+
+  <ion-segment class="ion-segmenAnimes">
+    <app-list-component [list]="listAnime"> </app-list-component>
+  </ion-segment>
+
+</ion-content>

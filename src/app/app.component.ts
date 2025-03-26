@@ -11,7 +11,8 @@ export class AppComponent {
     { title: 'Animes', url: '/anime-list', icon: 'list' },
     { title: 'Frieren', url: '/anime-view', icon: 'person' },
     { title: 'Editar anime', url: '/edit-frieren', icon: 'create' },
-    { title: 'Mi lista', url: '/my-list', icon: 'heart' }
+    { title: 'Mi lista', url: '/my-list', icon: 'heart' },
+    { title: 'Configuración', url: '/configuration-page', icon: 'cog'}
   ];
   public labels = ['Animes', 'Mangas'];
   constructor() {}
