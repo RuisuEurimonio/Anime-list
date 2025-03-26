@@ -1,3 +1,73 @@
-<p>
-  form works!
-</p>
+<div>
+
+  <form>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-input class="custom-colorLabel" [(ngModel)]="title" name="title" label="Titulo" labelPlacement="floating"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input class="custom-colorLabel" [(ngModel)]="episodes" name="episodes" type="number" label="Episodios" labelPlacement="floating"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input class="custom-colorLabel" [(ngModel)]="status" name="status" label="Estado" labelPlacement="floating"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-input class="custom-colorLabel" [(ngModel)]="title_japanese" name="title_japanese" label="Titulo japones" labelPlacement="floating"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input class="custom-colorLabel" [(ngModel)]="score" name="score" type="number" label="Puntaje" labelPlacement="floating"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          
+          <p> Genero: </p>
+          <ion-item>
+            <ion-input class="custom-colorLabel" [(ngModel)]="name_genre" name="genres" label="Nombre" labelPlacement="floating"></ion-input>
+            <ion-select  class="custom-colorLabel" label="Tipo" name="typeSelect" [(ngModel)]="type_select">
+              <ion-select-option *ngFor="let option of types" [value]="option">
+                {{ option }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-button (click)="addGenre()"> Agregar. </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="genres.length > 0">
+        <ion-col>
+          <ion-item *ngFor="let genre in genres">
+            <p> {{genre.name}} </p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="genres.length == 0">
+        <ion-col>
+        <ion-item>
+          <ion-label class="alert">No hay generos seleccionados.</ion-label>
+        </ion-item>
+      </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-textarea class="custom-colorLabel" label="Sinopsis" labelPlacement="floating" [(ngModel)]="synopsis" name="synopsis"/>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-textarea class="custom-colorLabel" label="Background" labelPlacement="floating" [(ngModel)]="background" name="background"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button> Crear. </ion-button>
+  </form>
+
+</div>

@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Anime } from 'src/app/data/interface/Anime.model';
+import { Genre } from 'src/app/data/interface/Genre.model';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  imports: [RouterModule, CommonModule, IonicModule]
+  imports: [RouterModule, CommonModule, IonicModule, FormsModule]
 })
 export class FormComponent  implements OnInit {
 
@@ -27,12 +29,24 @@ export class FormComponent  implements OnInit {
   score = 0
   synopsis = ''
   background = ''
-  genres = []
+  types = ["anime", "manga"]
+  type_select = "";
+  name_genre = ''
+
+  genres : Genre[] = []
   anime : Anime | null = null;
 
   constructor() { }
 
   ngOnInit() {}
+
+  addGenre(){
+    console.log(this.genres)
+    if(this.type_select !== "" || this.name_genre !== ""){
+      this.genres.push( {mal_id: this.genres.length, type: this.type_select, name: this.name_genre});
+      console.log(this.genres)
+    }
+  }
 
   emitirData(){
     this.anime = {

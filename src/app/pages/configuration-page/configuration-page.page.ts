@@ -21,4 +21,6 @@ export class ConfigurationPagePage implements OnInit {
   ngOnInit() {
   }
 
+  
+
 }
