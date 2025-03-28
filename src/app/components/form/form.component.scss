@@ -5,3 +5,18 @@
 .alert{
     color: #f0f;
 }
+
+.container{
+    width: 100%;
+}
+
+.custom_button {
+    --background: var(--primary-background-color);
+    --color: var(--primary-color)
+  }
+ 
+.custom_button:hover{
+    --background: var(--highlight-color);
+    --color: var(--light-color);
+    transition: 1s;
+}

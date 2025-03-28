@@ -38,14 +38,6 @@ export class FormComponent  implements OnInit {
     console.log(this.genres)
   }
 
-/*  addGenre(){
-    console.log(this.genres)
-    if(this.type_select !== "" && this.name_genre !== ""){
-      this.genres.push( {mal_id: this.genres.length, type: this.type_select, name: this.name_genre});
-    }
-  }
-    */
-
   addGenre() {
     if (this.name_genre.trim() && this.type_select.trim()) {
       this.genres.push({
@@ -54,8 +46,6 @@ export class FormComponent  implements OnInit {
         type: this.type_select
       });
 
-      console.log("hola");
-      // Limpiar los campos después de agregar
       this.name_genre = '';
       this.type_select = '';
     }
@@ -80,5 +70,9 @@ export class FormComponent  implements OnInit {
       genres: this.genres
     }
     this.sendData.emit(this.anime);
+  }
+
+  verifyData(){
+    return 
   }
 }

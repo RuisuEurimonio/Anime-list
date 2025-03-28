@@ -11,6 +11,8 @@ import { Anime } from 'src/app/data/interface/Anime.model';
 export class ListComponentComponent  implements OnInit {
 
   @Input() list : Anime[] | undefined | null;
+  @Input() showTitle : boolean = true;
+  @Input() showButtonList : boolean = true;
   haveAnimes : boolean = false;
 
   constructor() { }

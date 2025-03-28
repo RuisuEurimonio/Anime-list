@@ -3,12 +3,12 @@
     <ion-title> Configuración de la página. </ion-title>
   </ion-toolbar>
 
-  <ion-segment>
-    <app-form (sendData)="addItem($event)"> </app-form>
-  </ion-segment>
+  <div class="full-page">
+    <app-form class="full-page" (sendData)="addItem($event)"> </app-form>
+  </div>
 
-  <ion-segment class="ion-segmenAnimes">
-    <app-list-component [list]="listAnime"> </app-list-component>
-  </ion-segment>
+  <div class="ion-segmenAnimes">
+    <app-list-component [showButtonList]="false" [showTitle]="false" [list]="listAnime"> </app-list-component>
+  </div>
 
 </ion-content>

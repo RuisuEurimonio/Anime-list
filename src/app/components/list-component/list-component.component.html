@@ -1,5 +1,5 @@
 <div>
-<ion-header>
+<ion-header *ngIf="showTitle">
   <ion-toolbar>
     <ion-title> Lista de animes. </ion-title>
   </ion-toolbar>
@@ -26,11 +26,11 @@
     <ion-header [translucent]="true" class="header">
       <ion-toolbar class="toolbar">
         <ion-title size="large" class="title"
-          >No se han encontrado animes, vuelvelo a intentar más tarde.</ion-title
+          >No se han encontrado animes, {{showTitle ? "vuelvelo a intentar más tarde." : "Agrega algún anime."}}</ion-title
         >
       </ion-toolbar>
     </ion-header>
-    <div>
+    <div *ngIf="showButtonList">
       <ion-button [routerLink]="['/home']" fill="outline" class="button-list">
         Lista de animes.
       </ion-button>
