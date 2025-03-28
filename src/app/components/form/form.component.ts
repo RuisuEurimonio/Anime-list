@@ -1,8 +1,4 @@
-import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
 import { Anime } from 'src/app/data/interface/Anime.model';
 import { Genre } from 'src/app/data/interface/Genre.model';
 
@@ -10,7 +6,7 @@ import { Genre } from 'src/app/data/interface/Genre.model';
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  imports: [RouterModule, CommonModule, IonicModule, FormsModule]
+  standalone: false
 })
 export class FormComponent  implements OnInit {
 
@@ -33,19 +29,40 @@ export class FormComponent  implements OnInit {
   type_select = "";
   name_genre = ''
 
-  genres : Genre[] = []
+  genres: Genre[] = [];
   anime : Anime | null = null;
 
   constructor() { }
 
-  ngOnInit() {}
-
-  addGenre(){
+  ngOnInit() {
     console.log(this.genres)
-    if(this.type_select !== "" || this.name_genre !== ""){
+  }
+
+/*  addGenre(){
+    console.log(this.genres)
+    if(this.type_select !== "" && this.name_genre !== ""){
       this.genres.push( {mal_id: this.genres.length, type: this.type_select, name: this.name_genre});
-      console.log(this.genres)
     }
+  }
+    */
+
+  addGenre() {
+    if (this.name_genre.trim() && this.type_select.trim()) {
+      this.genres.push({
+        mal_id: this.genres.length + 1, 
+        name: this.name_genre, 
+        type: this.type_select
+      });
+
+      console.log("hola");
+      // Limpiar los campos después de agregar
+      this.name_genre = '';
+      this.type_select = '';
+    }
+  }
+
+  removeGenre(index: number) {
+    this.genres.splice(index, 1);
   }
 
   emitirData(){

@@ -7,8 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ConfigurationPagePageRoutingModule } from './configuration-page-routing.module';
 
 import { ConfigurationPagePage } from './configuration-page.page';
-import { ListComponentComponent } from 'src/app/components/list-component/list-component.component';
-import { FormComponent } from 'src/app/components/form/form.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -16,8 +15,7 @@ import { FormComponent } from 'src/app/components/form/form.component';
     FormsModule,
     IonicModule,
     ConfigurationPagePageRoutingModule,
-    ListComponentComponent,
-    FormComponent
+    ComponentsModule
   ],
   declarations: [ConfigurationPagePage]
 })

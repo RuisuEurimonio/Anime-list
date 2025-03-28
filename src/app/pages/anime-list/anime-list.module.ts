@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AnimeListPageRoutingModule } from './anime-list-routing.module';
 
 import { AnimeListPage } from './anime-list.page';
-import { ListComponentComponent } from 'src/app/components/list-component/list-component.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { ListComponentComponent } from 'src/app/components/list-component/list-c
     FormsModule,
     IonicModule,
     AnimeListPageRoutingModule,
-    ListComponentComponent
+    ComponentsModule
   ],
   declarations: [AnimeListPage]
 })

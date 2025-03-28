@@ -27,6 +27,7 @@
           </ion-list>
         </ion-col>
       </ion-row>
+      <!--
       <ion-row>
         <ion-col>
           
@@ -45,7 +46,7 @@
       <ion-row *ngIf="genres.length > 0">
         <ion-col>
           <ion-item *ngFor="let genre in genres">
-            <p> {{genre.name}} </p>
+            <p> {{genre | json}} </p>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -56,6 +57,54 @@
         </ion-item>
       </ion-col>
       </ion-row>
+    -->
+    <ion-row>
+      <ion-col>
+        <p>Genero:</p>
+        <ion-item>
+          <ion-input 
+            class="custom-colorLabel" 
+            [(ngModel)]="name_genre" 
+            placeholder="Nombre del género">
+          </ion-input>
+    
+          <ion-select 
+            class="custom-colorLabel" 
+            placeholder="Selecciona tipo" 
+            [(ngModel)]="type_select">
+            <ion-select-option *ngFor="let option of types" [value]="option">
+              {{ option }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <ion-button expand="full" (click)="addGenre()">Agregar</ion-button>
+      </ion-col>
+    </ion-row>
+    
+    <!-- Mostrar géneros agregados -->
+    <ion-row *ngIf="genres.length > 0">
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let genre of genres; let i = index">
+            <p> {{ genre.name }} - {{ genre.type }} </p>
+            <ion-button fill="clear" color="danger" (click)="removeGenre(i)">
+              Eliminar
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    
+    <!-- Mensaje si no hay géneros -->
+    <ion-row *ngIf="genres.length === 0">
+      <ion-col>
+        <ion-item>
+          <ion-label class="alert">No hay géneros agregados.</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    
       <ion-row>
         <ion-col>
           <ion-textarea class="custom-colorLabel" label="Sinopsis" labelPlacement="floating" [(ngModel)]="synopsis" name="synopsis"/>
@@ -69,5 +118,6 @@
     </ion-grid>
     <ion-button> Crear. </ion-button>
   </form>
+  
 
 </div>
