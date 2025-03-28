@@ -8,3 +8,23 @@
     margin-bottom: 8px;
   }
   
+
+  .custom_button{
+    --background: var(--primary-background-color);
+    --color: var(--primary-color)
+  }
+
+  .custom_button:hover{
+    --background: var(--highlight-color);
+    --color: var(--light-color);
+    transition: 1s;
+}
+
+.custom-colorLabel{
+  --highlight-color: #f0f
+}
+
+.button_card{
+  width: 90%;
+  margin: auto auto 1rem auto;
+}

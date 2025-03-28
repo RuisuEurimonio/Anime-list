@@ -7,13 +7,12 @@
   
     <ion-card-content>
       <ion-item>
-        <ion-label position="floating">Buscar Anime</ion-label>
-        <ion-input type="text" placeholder="Ej. Naruto, One Piece..."></ion-input>
+        <ion-input class="custom-colorLabel" type="text" placeholder="Ej. Naruto, One Piece..." label="Nombre"
+        labelPlacement="floating"></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label>Género</ion-label>
-        <ion-select placeholder="Selecciona un género">
+        <ion-select class="custom-colorLabel" placeholder="Selecciona un género" label="Genero">
           <ion-select-option value="accion">Acción</ion-select-option>
           <ion-select-option value="aventura">Aventura</ion-select-option>
           <ion-select-option value="comedia">Comedia</ion-select-option>
@@ -23,17 +22,15 @@
       </ion-item>
       
       <ion-item>
-        <ion-label>Ordenar por</ion-label>
-        <ion-select placeholder="Selecciona">
+        <ion-select placeholder="Seleccionar:" class="custom-colorLabel" label="Tipo">
           <ion-select-option value="popularidad">Popularidad</ion-select-option>
           <ion-select-option value="mejor_puntuado">Mejor Puntuado</ion-select-option>
           <ion-select-option value="reciente">Más Reciente</ion-select-option>
         </ion-select>
       </ion-item>
   
-      <!-- Botón para aplicar filtros -->
-      <ion-button expand="full" color="primary">Aplicar Filtros</ion-button>
     </ion-card-content>
+    <ion-button class="custom_button button_card" expand="full">Aplicar Filtros</ion-button>
   </ion-card>
   
 
