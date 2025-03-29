@@ -36,3 +36,7 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
+.custom_button {
+  --background: var(--primary-background-color);
+  --color: var(--primary-color)
+}
