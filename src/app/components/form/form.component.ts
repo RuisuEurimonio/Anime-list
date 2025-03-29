@@ -103,7 +103,7 @@ export class FormComponent implements OnInit {
     }
 
     if(this.synopsis.trim().length < 20 || this.synopsis.trim().length > 2500){
-      this.alertMessage = "La synopsis debe tener entre 20 y 500 caracteres";
+      this.alertMessage = "La sinopsis debe tener entre 20 y 500 caracteres";
       return false;
     }
     if(this.background.trim().length < 20 || this.background.trim().length > 2500){
