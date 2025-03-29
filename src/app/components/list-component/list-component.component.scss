@@ -1,7 +1,7 @@
 .truncate-text {
     display: -webkit-box;
-    -webkit-line-clamp: 7;
-    line-clamp: 7;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-align: center;
@@ -45,6 +45,7 @@ ion-list.flex-list{
     gap: .5rem;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: baseline;
 }
 
 .flex-list ion-card {
@@ -53,4 +54,9 @@ ion-list.flex-list{
     justify-content: space-between;
     width: 20rem;
     flex-direction: column;
+  }
+
+  .custom_button {
+    --background: var(--primary-background-color);
+    --color: var(--primary-color)
   }
