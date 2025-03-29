@@ -10,6 +10,9 @@ import { Genre } from 'src/app/data/interface/Genre.model';
 })
 export class FormComponent implements OnInit {
   @Output() sendData = new EventEmitter<Anime>();
+  types = ['anime', 'manga'];
+  genresList : String[] = ["Acción", "Aventura", "Comedia", "Drama", "Fantasía", "Ciencia Ficción", "Terror", "Misterio", "Romance", "Slice of Life", "Sobrenatural", "Psicológico", "Deportes", "Mecha", "Isekai", "Harem", "Magia", "Artes Marciales", "Militar", "Música"];
+  statusList : String[] = ["Finalizado", "En emisión"]
 
   mal_id = 0;
   url = '';
@@ -28,7 +31,7 @@ export class FormComponent implements OnInit {
   score = 0;
   synopsis = '';
   background = '';
-  types = ['anime', 'manga'];
+
   type_select = '';
   name_genre = '';
 

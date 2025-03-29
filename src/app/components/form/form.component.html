@@ -25,13 +25,17 @@
               ></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input
+              <ion-select
                 class="custom-colorLabel"
                 [(ngModel)]="status"
                 name="status"
                 label="Estado"
                 labelPlacement="floating"
-              ></ion-input>
+              >
+              <ion-select-option *ngFor="let option of statusList" [value]="option">
+                {{ option }}
+              </ion-select-option>
+            </ion-select>
             </ion-item>
           </ion-list>
         </ion-col>
@@ -73,13 +77,16 @@
         <ion-col>
           <p>Genero:</p>
           <ion-item>
-            <ion-input
+            <ion-select
               class="custom-colorLabel"
               [(ngModel)]="name_genre"
               name="name_genre"
               placeholder="Nombre del género"
             >
-            </ion-input>
+              <ion-select-option *ngFor="let option of genresList" [value]="option">
+                {{ option }}
+              </ion-select-option>
+            </ion-select>
 
             <ion-select
               class="custom-colorLabel"
