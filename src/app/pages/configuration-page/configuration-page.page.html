@@ -8,7 +8,8 @@
   </div>
 
   <div class="ion-segmenAnimes">
-    <app-list-component [showButtonList]="false" [showTitle]="false" [list]="listAnime"> </app-list-component>
+    <h2 class="list-title" *ngIf="listAnime.length > 0"> Animes agregados: </h2>
+    <app-list-component class="list-container" [showButtonList]="false" [showTitle]="false" [list]="listAnime"> </app-list-component>
   </div>
 
 </ion-content>

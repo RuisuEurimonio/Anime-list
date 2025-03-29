@@ -1,5 +1,11 @@
 <div class="container">
   <h2> Formulario:  </h2>
+  <ion-alert
+      trigger="present-alert"
+      header="Crear anime"
+      [message]="alertMessage"
+      [buttons]="alertButtons"
+  ></ion-alert>
   <form>
     <ion-grid>
       <ion-row>
@@ -149,6 +155,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-button class="custom_button" expand="full" (click)="sendAnime()"> Crear. </ion-button>
+    <ion-button class="custom_button" expand="full" (click)="sendAnime()" id="present-alert"> Crear. </ion-button>
   </form>
+
 </div>

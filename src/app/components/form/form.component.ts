@@ -13,6 +13,8 @@ export class FormComponent implements OnInit {
   types = ['anime', 'manga'];
   genresList : String[] = ["Acción", "Aventura", "Comedia", "Drama", "Fantasía", "Ciencia Ficción", "Terror", "Misterio", "Romance", "Slice of Life", "Sobrenatural", "Psicológico", "Deportes", "Mecha", "Isekai", "Harem", "Magia", "Artes Marciales", "Militar", "Música"];
   statusList : String[] = ["Finalizado", "En emisión"]
+  alertButtons = ['Aceptar'];
+  alertMessage = "Anime creado exitosamente.";
 
   mal_id = 0;
   url = '';
@@ -62,39 +64,54 @@ export class FormComponent implements OnInit {
   }
 
   verifyData() {
+    if(this.title.trim().length < 5 || this.title.trim().length > 100){
+      this.alertMessage= "El título debe tener entre 5 y 100 caracteres"
+      return false;
+    }
+
+    if(this.title_japanese.trim().length < 1 || this.title.trim().length > 100){
+      this.alertMessage= "El título japones debe tener entre 5 y 100 caracteres"
+      return false;
+    }
+    
+    if(this.episodes <= 0 || this.episodes > 2000){
+      this.alertMessage = "El número de episodios debe ser un número entero entre 1 y 2000";
+      return false;
+    }
+
+    if(this.score < 0 || this.score > 5){
+      this.alertMessage = "El puntaje debe ser un número entre 0 y 5";
+      return false;
+    }
+
+    if(this.status.trim().length < 2 || this.status.trim().length > 20){
+      this.alertMessage = "Escoge un estado valido";
+      return false;
+    }
+    
+
     if(!this.verifyUrl()){
-      console.log("URL no válida");
+      this.alertMessage = "Agrega una URL válida";
       return false;
     }
 
     this.addImg();
 
-    if(this.title.trim().length < 5 || this.title.trim().length > 100){
-      console.log("El título debe tener entre 5 y 100 caracteres");
+    if(this.genres.length <= 0){
+      this.alertMessage = "Agrega almenos género";
       return false;
     }
-    if(this.episodes < 0 || this.episodes > 2000){
-      console.log("El número de episodios debe ser un número entero entre 0 y 2000");
-      return false;
-    }
-    if(this.status.trim().length < 2 || this.status.trim().length > 20){
-      console.log("El estado debe tener entre 2 y 20 caracteres");
-      return false;
-    }
-    if(this.score < 0 || this.score > 5){
-      console.log("El puntaje debe ser un número entre 0 y 5");
-      return false;
-    }
+
     if(this.synopsis.trim().length < 20 || this.synopsis.trim().length > 2500){
-      console.log("La synopsis debe tener entre 20 y 500 caracteres");
+      this.alertMessage = "La synopsis debe tener entre 20 y 500 caracteres";
       return false;
     }
     if(this.background.trim().length < 20 || this.background.trim().length > 2500){
-      console.log("El background debe tener entre 20 y 1000 caracteres");
+      this.alertMessage = "El background debe tener entre 20 y 1000 caracteres";
       return false;
     }
     if(this.genres.length < 0){
-      console.log("Debe agregar al menos un género");
+      this.alertMessage = "Debe agregar al menos un género";
       return false;
     }
     return true;
@@ -110,12 +127,10 @@ export class FormComponent implements OnInit {
 
   sendAnime(){
     if(this.verifyData()){
+      this.alertMessage = "Anime creado correctamente";
       this.emitirData();
       this.cleanInputs();
-      console.log("hola")
-    } else {
-      console.log('Los datos no son válidos');
-    } 
+    }
   }
 
   cleanInputs(){
