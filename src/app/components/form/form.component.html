@@ -56,6 +56,16 @@
                 labelPlacement="floating"
               ></ion-input>
             </ion-item>
+            <ion-item>
+              <ion-input
+                class="custom-colorLabel"
+                [(ngModel)]="imgUrl"
+                name="imgUrl"
+                type="url"
+                label="Imagen"
+                labelPlacement="floating"
+              ></ion-input>
+            </ion-item>
           </ion-list>
         </ion-col>
       </ion-row>
@@ -132,6 +142,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-button class="custom_button" expand="full"> Crear. </ion-button>
+    <ion-button class="custom_button" expand="full" (click)="sendAnime()"> Crear. </ion-button>
   </form>
 </div>

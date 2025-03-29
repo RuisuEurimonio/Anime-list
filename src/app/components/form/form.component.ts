@@ -6,44 +6,47 @@ import { Genre } from 'src/app/data/interface/Genre.model';
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  standalone: false
+  standalone: false,
 })
-export class FormComponent  implements OnInit {
-
+export class FormComponent implements OnInit {
   @Output() sendData = new EventEmitter<Anime>();
-  
-  mal_id = 0
-  url = ''
-  images = { 
-    jpg: { image_url: '' }, 
-    webp: { image_url: '' } 
+
+  mal_id = 0;
+  url = '';
+
+  images = {
+    jpg: { image_url: '' },
+    webp: { image_url: '' },
   };
-  title = ''
-  title_japanese = ''
-  episodes = 0
-  status = ''
-  score = 0
-  synopsis = ''
-  background = ''
-  types = ["anime", "manga"]
-  type_select = "";
-  name_genre = ''
+
+  imgUrl = ''
+
+  title = '';
+  title_japanese = '';
+  episodes = 0;
+  status = '';
+  score = 0;
+  synopsis = '';
+  background = '';
+  types = ['anime', 'manga'];
+  type_select = '';
+  name_genre = '';
 
   genres: Genre[] = [];
-  anime : Anime | null = null;
+  anime: Anime | null = null;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    console.log(this.genres)
+    console.log(this.genres);
   }
 
   addGenre() {
     if (this.name_genre.trim() && this.type_select.trim()) {
       this.genres.push({
-        mal_id: this.genres.length + 1, 
-        name: this.name_genre, 
-        type: this.type_select
+        mal_id: this.genres.length + 1,
+        name: this.name_genre,
+        type: this.type_select,
       });
 
       this.name_genre = '';
@@ -55,7 +58,83 @@ export class FormComponent  implements OnInit {
     this.genres.splice(index, 1);
   }
 
-  emitirData(){
+  verifyData() {
+    if(!this.verifyUrl()){
+      console.log("URL no válida");
+      return false;
+    }
+
+    this.addImg();
+
+    if(this.title.trim().length < 5 || this.title.trim().length > 100){
+      console.log("El título debe tener entre 5 y 100 caracteres");
+      return false;
+    }
+    if(this.episodes < 0 || this.episodes > 2000){
+      console.log("El número de episodios debe ser un número entero entre 0 y 2000");
+      return false;
+    }
+    if(this.status.trim().length < 2 || this.status.trim().length > 20){
+      console.log("El estado debe tener entre 2 y 20 caracteres");
+      return false;
+    }
+    if(this.score < 0 || this.score > 5){
+      console.log("El puntaje debe ser un número entre 0 y 5");
+      return false;
+    }
+    if(this.synopsis.trim().length < 20 || this.synopsis.trim().length > 2500){
+      console.log("La synopsis debe tener entre 20 y 500 caracteres");
+      return false;
+    }
+    if(this.background.trim().length < 20 || this.background.trim().length > 2500){
+      console.log("El background debe tener entre 20 y 1000 caracteres");
+      return false;
+    }
+    if(this.genres.length < 0){
+      console.log("Debe agregar al menos un género");
+      return false;
+    }
+    return true;
+  }
+
+  addImg(){
+    this.images = {jpg: {image_url: this.imgUrl}, webp: {image_url: this.imgUrl}};
+  }
+
+  verifyUrl(){
+    return /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-.~:/?#[\]@!$&'()*+,;=]*)?\.(jpg|webp)$/i.test(this.imgUrl);
+  }
+
+  sendAnime(){
+    if(this.verifyData()){
+      this.emitirData();
+      this.cleanInputs();
+      console.log("hola")
+    } else {
+      console.log('Los datos no son válidos');
+    } 
+  }
+
+  cleanInputs(){
+    this.mal_id = 0;
+    this.url = '';
+    this.images = {
+      jpg: { image_url: '' },
+      webp: { image_url: '' },
+    };
+    this.title = '';
+    this.title_japanese = '';
+    this.episodes = 0;
+    this.status = '';
+    this.score = 0;
+    this.synopsis = '';
+    this.background = '';
+    this.genres = [];
+    this.anime = null;
+    this.imgUrl = '';
+  }
+
+  emitirData() {
     this.anime = {
       mal_id: this.mal_id,
       url: this.url,
@@ -67,12 +146,8 @@ export class FormComponent  implements OnInit {
       score: this.score,
       synopsis: this.synopsis,
       background: this.background,
-      genres: this.genres
-    }
+      genres: this.genres,
+    };
     this.sendData.emit(this.anime);
-  }
-
-  verifyData(){
-    return 
   }
 }
