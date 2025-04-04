@@ -14,11 +14,17 @@ export class ListComponentComponent  implements OnInit {
   list : Anime[] = [];
   @Input() showTitle : boolean = true;
   @Input() showButtonList : boolean = true;
+  @Input() customList : boolean = false;
+  @Input() otherList : Anime[] = [];
 
   constructor(private animesService : AnimesService) { }
 
   ngOnInit() {
-    this.list = this.animesService.getAllAnimes();
+    if(!this.customList){
+      this.list = this.animesService.getAllAnimes();
+    }else{
+      this.list = this.otherList;
+    }
   }
 
 }
