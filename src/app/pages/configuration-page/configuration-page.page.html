@@ -4,12 +4,12 @@
   </ion-toolbar>
 
   <div class="full-page">
-    <app-form class="full-page" (sendData)="addItem($event)"> </app-form>
+    <app-form class="full-page"> </app-form>
   </div>
 
   <div class="ion-segmenAnimes">
     <h2 class="list-title" *ngIf="listAnime.length > 0"> Animes agregados: </h2>
-    <app-list-component class="list-container" [showButtonList]="false" [showTitle]="false" [list]="listAnime"> </app-list-component>
+    <app-list-component class="list-container" [showButtonList]="false" [showTitle]="false"> </app-list-component>
   </div>
 
 </ion-content>

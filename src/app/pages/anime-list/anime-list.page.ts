@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Anime } from 'src/app/data/interface/Anime.model';
-import animeListJson from 'src/assets/data/animesList.json';
+import { AnimesService } from 'src/app/data/service/animes.service';
 
 @Component({
   selector: 'app-anime-list',
@@ -10,11 +10,12 @@ import animeListJson from 'src/assets/data/animesList.json';
 })
 export class AnimeListPage implements OnInit {
 
-  listAnimes : Anime[] = animeListJson;
+  listAnimes : Anime[] = [];
 
-  constructor() { }
+  constructor(private animesService : AnimesService) { }
 
   ngOnInit() {
+    this.listAnimes = this.animesService.getAllAnimes()
   }
 
 }

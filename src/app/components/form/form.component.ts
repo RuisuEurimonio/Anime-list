@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Anime } from 'src/app/data/interface/Anime.model';
 import { Genre } from 'src/app/data/interface/Genre.model';
+import { AnimesService } from 'src/app/data/service/animes.service';
 
 @Component({
   selector: 'app-form',
@@ -9,7 +10,6 @@ import { Genre } from 'src/app/data/interface/Genre.model';
   standalone: false,
 })
 export class FormComponent implements OnInit {
-  @Output() sendData = new EventEmitter<Anime>();
   types = ['anime', 'manga'];
   genresList : String[] = ["Acción", "Aventura", "Comedia", "Drama", "Fantasía", "Ciencia Ficción", "Terror", "Misterio", "Romance", "Slice of Life", "Sobrenatural", "Psicológico", "Deportes", "Mecha", "Isekai", "Harem", "Magia", "Artes Marciales", "Militar", "Música"];
   statusList : String[] = ["Finalizado", "En emisión"]
@@ -40,7 +40,7 @@ export class FormComponent implements OnInit {
   genres: Genre[] = [];
   anime: Anime | null = null;
 
-  constructor() {}
+  constructor(private animesService : AnimesService) {}
 
   ngOnInit() {
     console.log(this.genres);
@@ -166,6 +166,6 @@ export class FormComponent implements OnInit {
       background: this.background,
       genres: this.genres,
     };
-    this.sendData.emit(this.anime);
+    this.animesService.addAnime(this.anime);
   }
 }
