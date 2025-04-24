@@ -166,6 +166,6 @@ export class FormComponent implements OnInit {
       background: this.background,
       genres: this.genres,
     };
-    this.animesService.addAnime(this.anime);
+    //this.animesService.addAnime(this.anime);
   }
 }

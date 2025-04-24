@@ -21,7 +21,16 @@ export class ListComponentComponent  implements OnInit {
 
   ngOnInit() {
     if(!this.customList){
-      this.list = this.animesService.getAllAnimes();
+      if(this.list.length === 0){
+        this.animesService.getAllAnimes().subscribe({
+          next: (response) => {
+            this.list = response.data
+          },
+          error: (e) => {
+            console.log(e);
+          }
+        })
+      }
     }else{
       this.list = this.otherList;
     }

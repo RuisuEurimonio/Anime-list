@@ -16,7 +16,7 @@ import { RouterLink } from '@angular/router';
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterLink
+    RouterLink,
   ],
   exports: [
     ListComponentComponent,
