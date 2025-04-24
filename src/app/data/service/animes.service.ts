@@ -11,7 +11,7 @@ import { ApiResponse } from '../interface/ApiResponse';
 export class AnimesService {
 
   animesCache : Anime[] = animeList;
-  linkApi : string = "https://api.jikan.moe/v4/top/anime";
+  linkApi : string = "https://api.jikan.moe/v4/top/anime?page=1";
 
   constructor(private http : HttpClient) { }
 
