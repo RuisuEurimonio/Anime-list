@@ -15,16 +15,7 @@ export class AnimeListPage implements OnInit {
   constructor(private animesService : AnimesService) { }
 
   ngOnInit() {
-    if(this.listAnimes.length === 0){
-      this.animesService.getAllAnimes().subscribe({
-        next: (response) => {
-          this.listAnimes = response.data
-        },
-        error: (e) => {
-          console.log(e);
-        }
-      })
-    }
+    this.listAnimes = this.animesService.getAllAnimes();
   }
 
 }

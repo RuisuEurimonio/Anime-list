@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Anime } from 'src/app/data/interface/Anime.model';
 import { UserModel } from 'src/app/data/interface/User.model';
 import { AnimesService } from 'src/app/data/service/animes.service';
-import animeListJson from 'src/assets/data/animesList.json';
 
 @Component({
   selector: 'app-my-list',

@@ -43,7 +43,6 @@ export class FormComponent implements OnInit {
   constructor(private animesService : AnimesService) {}
 
   ngOnInit() {
-    console.log(this.genres);
   }
 
   addGenre() {
@@ -166,6 +165,6 @@ export class FormComponent implements OnInit {
       background: this.background,
       genres: this.genres,
     };
-    //this.animesService.addAnime(this.anime);
+    this.animesService.addAnimeToCache(this.anime);
   }
 }
