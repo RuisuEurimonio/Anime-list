@@ -6,7 +6,7 @@
       [message]="alertMessage"
       [buttons]="alertButtons"
   ></ion-alert>
-  <form>
+  <form [formGroup]="formGroup">
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -14,7 +14,7 @@
             <ion-item>
               <ion-input
                 class="custom-colorLabel"
-                [(ngModel)]="title"
+                formControlName="title"
                 name="title"
                 label="Titulo"
                 labelPlacement="floating"
@@ -23,7 +23,7 @@
             <ion-item>
               <ion-input
                 class="custom-colorLabel"
-                [(ngModel)]="episodes"
+                formControlName="episodes"
                 name="episodes"
                 type="number"
                 label="Episodios"
@@ -33,7 +33,7 @@
             <ion-item>
               <ion-select
                 class="custom-colorLabel"
-                [(ngModel)]="status"
+                formControlName="status"
                 name="status"
                 label="Estado"
                 labelPlacement="floating"
@@ -50,7 +50,7 @@
             <ion-item>
               <ion-input
                 class="custom-colorLabel"
-                [(ngModel)]="title_japanese"
+                formControlName="title_japanese"
                 name="title_japanese"
                 label="Titulo japones"
                 labelPlacement="floating"
@@ -59,7 +59,7 @@
             <ion-item>
               <ion-input
                 class="custom-colorLabel"
-                [(ngModel)]="score"
+                formControlName="score"
                 name="score"
                 type="number"
                 label="Puntaje"
@@ -69,8 +69,8 @@
             <ion-item>
               <ion-input
                 class="custom-colorLabel"
-                [(ngModel)]="imgUrl"
-                name="imgUrl"
+                formControlName="imageUrl"
+                name="imageUrl"
                 type="url"
                 label="Imagen"
                 labelPlacement="floating"
@@ -85,7 +85,7 @@
           <ion-item>
             <ion-select
               class="custom-colorLabel"
-              [(ngModel)]="name_genre"
+              formControlName="name_genre"
               name="name_genre"
               placeholder="Nombre del género"
             >
@@ -98,7 +98,7 @@
               class="custom-colorLabel"
               placeholder="Selecciona tipo"
               name="type_select"
-              [(ngModel)]="type_select"
+              formControlName="type_select"
             >
               <ion-select-option *ngFor="let option of types" [value]="option">
                 {{ option }}
@@ -138,7 +138,7 @@
             class="custom-colorLabel"
             label="Sinopsis"
             labelPlacement="floating"
-            [(ngModel)]="synopsis"
+            formControlName="synopsis"
             name="synopsis"
           />
         </ion-col>
@@ -149,7 +149,7 @@
             class="custom-colorLabel"
             label="Background"
             labelPlacement="floating"
-            [(ngModel)]="background"
+            formControlName="background"
             name="background"
           />
         </ion-col>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Anime } from 'src/app/data/interface/Anime.model';
 import { Genre } from 'src/app/data/interface/Genre.model';
 import { AnimesService } from 'src/app/data/service/animes.service';
@@ -24,37 +25,42 @@ export class FormComponent implements OnInit {
     webp: { image_url: '' },
   };
 
-  imgUrl = ''
-
-  title = '';
-  title_japanese = '';
-  episodes = 0;
-  status = '';
-  score = 0;
-  synopsis = '';
-  background = '';
-
-  type_select = '';
-  name_genre = '';
-
   genres: Genre[] = [];
   anime: Anime | null = null;
 
-  constructor(private animesService : AnimesService) {}
+  formGroup : FormGroup = new FormGroup({});
+
+  constructor(private animesService : AnimesService, private fb : FormBuilder) {}
 
   ngOnInit() {
+    this.initForm();
+  }
+
+  initForm(){
+    this.formGroup = this.fb.group({
+      title:["", Validators.required],
+      title_japanese:["",Validators.required],
+      episodes:["",Validators.required],
+      status:[''],
+      score:[0,[Validators.required, Validators.min(0), Validators.max(5)]],
+      imageUrl:["",[Validators.required, Validators.pattern(/^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-.~:/?#[\]@!$&'()*+,;=]*)?\.(jpg|webp)$/i)]],
+      synopsis:['',[Validators.required, Validators.minLength(100)]],
+      background:['',[Validators.required, Validators.minLength(100)]],
+      name_genre:[''],
+      type_select:['',]
+    })
   }
 
   addGenre() {
-    if (this.name_genre.trim() && this.type_select.trim()) {
+    if (this.formGroup?.get("name_genre")?.valid && this.formGroup?.get("type_select")) {
       this.genres.push({
         mal_id: this.genres.length + 1,
-        name: this.name_genre,
-        type: this.type_select,
+        name: this.formGroup?.get("name_genre")?.value,
+        type: this.formGroup?.get("type_select")?.value,
       });
 
-      this.name_genre = '';
-      this.type_select = '';
+      this.formGroup?.get("name_genre")?.setValue("");
+      this.formGroup?.get("Type_select")?.setValue("");
     }
   }
 
@@ -62,93 +68,12 @@ export class FormComponent implements OnInit {
     this.genres.splice(index, 1);
   }
 
-  verifyData() {
-    if(this.title.trim().length < 5 || this.title.trim().length > 100){
-      this.alertMessage= "El título debe tener entre 5 y 100 caracteres"
-      return false;
-    }
-
-    if(this.title_japanese.trim().length < 1 || this.title.trim().length > 100){
-      this.alertMessage= "El título japones debe tener entre 5 y 100 caracteres"
-      return false;
-    }
-    
-    if(this.episodes <= 0 || this.episodes > 2000){
-      this.alertMessage = "El número de episodios debe ser un número entero entre 1 y 2000";
-      return false;
-    }
-
-    if(this.score < 0 || this.score > 5){
-      this.alertMessage = "El puntaje debe ser un número entre 0 y 5";
-      return false;
-    }
-
-    if(this.status.trim().length < 2 || this.status.trim().length > 20){
-      this.alertMessage = "Escoge un estado valido";
-      return false;
-    }
-    
-
-    if(!this.verifyUrl()){
-      this.alertMessage = "Agrega una URL válida";
-      return false;
-    }
-
-    this.addImg();
-
-    if(this.genres.length <= 0){
-      this.alertMessage = "Agrega almenos género";
-      return false;
-    }
-
-    if(this.synopsis.trim().length < 20 || this.synopsis.trim().length > 2500){
-      this.alertMessage = "La sinopsis debe tener entre 20 y 500 caracteres";
-      return false;
-    }
-    if(this.background.trim().length < 20 || this.background.trim().length > 2500){
-      this.alertMessage = "El background debe tener entre 20 y 1000 caracteres";
-      return false;
-    }
-    if(this.genres.length < 0){
-      this.alertMessage = "Debe agregar al menos un género";
-      return false;
-    }
-    return true;
-  }
-
-  addImg(){
-    this.images = {jpg: {image_url: this.imgUrl}, webp: {image_url: this.imgUrl}};
-  }
-
-  verifyUrl(){
-    return /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-.~:/?#[\]@!$&'()*+,;=]*)?\.(jpg|webp)$/i.test(this.imgUrl);
-  }
-
   sendAnime(){
-    if(this.verifyData()){
+    if(this.formGroup?.valid){
+      this.images = {jpg: {image_url: this.formGroup.get("imageUrl")?.value}, webp:{image_url: this.formGroup.get("imageUrl")?.value}}
       this.alertMessage = "Anime creado correctamente";
       this.emitirData();
-      this.cleanInputs();
-    }
-  }
-
-  cleanInputs(){
-    this.mal_id = 0;
-    this.url = '';
-    this.images = {
-      jpg: { image_url: '' },
-      webp: { image_url: '' },
-    };
-    this.title = '';
-    this.title_japanese = '';
-    this.episodes = 0;
-    this.status = '';
-    this.score = 0;
-    this.synopsis = '';
-    this.background = '';
-    this.genres = [];
-    this.anime = null;
-    this.imgUrl = '';
+      this.formGroup?.reset();    }
   }
 
   emitirData() {
@@ -156,13 +81,13 @@ export class FormComponent implements OnInit {
       mal_id: this.mal_id,
       url: this.url,
       images: this.images,
-      title: this.title,
-      title_japanese: this.title_japanese,
-      episodes: this.episodes,
-      status: this.status,
-      score: this.score,
-      synopsis: this.synopsis,
-      background: this.background,
+      title: this.formGroup?.get("title")?.value,
+      title_japanese: this.formGroup?.get("title_japanese")?.value,
+      episodes: this.formGroup?.get("episodes")?.value,
+      status: this.formGroup?.get("status")?.value,
+      score: this.formGroup?.get("score")?.value,
+      synopsis: this.formGroup?.get("synopsis")?.value,
+      background: this.formGroup?.get("background")?.value,
       genres: this.genres,
     };
     this.animesService.addAnimeToCache(this.anime);
