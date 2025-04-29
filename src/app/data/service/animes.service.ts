@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Anime } from '../interface/Anime.model';
 import animeList from 'src/assets/data/animesList.json';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ApiResponse } from '../interface/ApiResponse';
 
 @Injectable({
@@ -14,8 +14,8 @@ export class AnimesService {
 
   constructor(private http: HttpClient) {}
 
-  getAllAnimes(): Anime[] {
-    if (this.animesCache.length === 0) {
+  getAllAnimes(): Observable<Anime[]> {
+    if (this.animesCache?.length === 0) {
       this.http.get<ApiResponse>(this.linkApi).subscribe({
         next: (response) => {
           this.animesCache = response.data;
@@ -25,9 +25,9 @@ export class AnimesService {
           console.log(e);
         },
       });
-      return [];
+      return new Observable<[]>;
     } else {
-      return this.animesCache;
+      return of(this.animesCache);
     }
   }
 

@@ -20,7 +20,9 @@ export class ListComponentComponent  implements OnInit {
   constructor(private animesService : AnimesService) { }
 
   ngOnInit() {
-    this.list = this.animesService.getAllAnimes();
+    this.animesService.getAllAnimes().subscribe(data=>{
+      this.list = data
+    });
   }
 
 }

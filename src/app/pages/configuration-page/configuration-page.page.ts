@@ -10,12 +10,6 @@ import { Anime } from 'src/app/data/interface/Anime.model';
 })
 export class ConfigurationPagePage implements OnInit {
 
-  listAnime : Anime[] = [];
-
-  addItem(anime : Anime){
-    this.listAnime.push(anime);
-  }
-
   constructor() { }
 
   ngOnInit() {
