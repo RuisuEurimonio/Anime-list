@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Anime } from '../interface/Anime.model';
-import animeList from 'src/assets/data/animesList.json';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of, tap } from 'rxjs';
 import { ApiResponse } from '../interface/ApiResponse';
 
 @Injectable({
@@ -10,25 +9,21 @@ import { ApiResponse } from '../interface/ApiResponse';
 })
 export class AnimesService {
   animesCache: Anime[] = [];
-  linkApi: string = 'https://api.jikan.moe/v4/top/anime?page=1';
+  linkApi: string = 'https://api.jikan.moe/v4/top/anime?page=2';
 
   constructor(private http: HttpClient) {}
 
   getAllAnimes(): Observable<Anime[]> {
-    if (this.animesCache?.length === 0) {
-      this.http.get<ApiResponse>(this.linkApi).subscribe({
-        next: (response) => {
-          this.animesCache = response.data;
-          return this.animesCache;
-        },
-        error: (e) => {
-          console.log(e);
-        },
-      });
-      return new Observable<[]>;
-    } else {
+    if(this.animesCache.length > 0){
       return of(this.animesCache);
     }
+
+    return this.http.get<ApiResponse>(this.linkApi).pipe(
+      tap(response => {
+        this.animesCache = response.data
+      }),
+      map(response => response.data )
+    )
   }
 
   addAnimeToCache(anime : Anime){
