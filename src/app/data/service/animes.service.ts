@@ -45,6 +45,6 @@ export class AnimesService {
   }
 
   removeFavAnime(id : number){
-    this.favList.splice(id, 1);
+    this.favList = this.favList.filter(anime => anime.mal_id !== id);
   }
 }

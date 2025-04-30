@@ -16,7 +16,8 @@
           <img [alt]="item.background" [src]="item.images.jpg.image_url" />
         </ion-card-content>
         <ion-text class="truncate-text"> {{item.synopsis}} </ion-text>
-        <ion-button class="custom_button"> Ver anime. </ion-button>
+        <ion-button class="custom_button" *ngIf="isFollowed(item.mal_id)" (click)="unfollowAnime(item.mal_id)"> No seguir. </ion-button>
+        <ion-button class="custom_button" *ngIf="!isFollowed(item.mal_id)" (click)="followAnime(item)"> Seguir. </ion-button>
       </ion-card>
     </ion-item>
 </ion-list>

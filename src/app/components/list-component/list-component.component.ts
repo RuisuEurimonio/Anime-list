@@ -23,4 +23,16 @@ export class ListComponentComponent  implements OnInit {
     
   }
 
+  followAnime(anime : Anime){
+    this.animesService.addFavAnimes(anime);
+  }
+
+  unfollowAnime(id : number){
+    this.animesService.removeFavAnime(id);
+  }
+
+  isFollowed(id : number){
+    return this.animesService.getFavAnimes().some(anime => anime.mal_id == id);
+  }
+
 }
