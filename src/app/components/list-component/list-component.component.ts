@@ -11,7 +11,7 @@ import { AnimesService } from 'src/app/data/service/animes.service';
 })
 export class ListComponentComponent  implements OnInit {
 
-  list : Anime[] = [];
+  @Input() list : Anime[] = [];
   @Input() showTitle : boolean = true;
   @Input() showButtonList : boolean = true;
   @Input() customList : boolean = false;
@@ -20,9 +20,7 @@ export class ListComponentComponent  implements OnInit {
   constructor(private animesService : AnimesService) { }
 
   ngOnInit() {
-    this.animesService.getAllAnimes().subscribe(data=>{
-      this.list = data
-    });
+    
   }
 
 }

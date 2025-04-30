@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Anime } from 'src/app/data/interface/Anime.model';
+import { AnimesService } from 'src/app/data/service/animes.service';
 
 @Component({
   selector: 'app-configuration-page',
@@ -10,9 +11,14 @@ import { Anime } from 'src/app/data/interface/Anime.model';
 })
 export class ConfigurationPagePage implements OnInit {
 
-  constructor() { }
+  animesList : Anime[] = [];
+
+  constructor(private animesService : AnimesService) { }
 
   ngOnInit() {
+    this.animesService.getAllAnimes().subscribe(data=>{
+      this.animesList = data
+    });
   }
 
   

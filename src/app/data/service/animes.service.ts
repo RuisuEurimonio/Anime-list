@@ -9,6 +9,7 @@ import { ApiResponse } from '../interface/ApiResponse';
 })
 export class AnimesService {
   animesCache: Anime[] = [];
+  favList : Anime[] = [];
   linkApi: string = 'https://api.jikan.moe/v4/top/anime?page=2';
 
   constructor(private http: HttpClient) {}
@@ -33,5 +34,17 @@ export class AnimesService {
   getRangedAnime(start: number, end: number) {
     console.log(this.animesCache.slice(start, end));
     return this.animesCache.slice(start, end);
+  }
+
+  getFavAnimes(){
+    return this.favList;
+  }
+
+  addFavAnimes(anime : Anime){
+    this.favList.push(anime);
+  }
+
+  removeFavAnime(id : number){
+    this.favList.splice(id, 1);
   }
 }

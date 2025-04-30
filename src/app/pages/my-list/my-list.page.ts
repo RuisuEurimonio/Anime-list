@@ -26,7 +26,8 @@ export class MyListPage implements OnInit {
   constructor(private animesService : AnimesService) { }
 
   ngOnInit() {
-    this.listMyAnimes = this.animesService.getRangedAnime(0, 2);
+    this.listMyAnimes = this.animesService.getFavAnimes();
+    
   }
 
 }
