@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Anime } from 'src/app/data/interface/Anime.model';
 import { AnimesService } from 'src/app/data/service/animes.service';
 
@@ -12,6 +12,7 @@ import { AnimesService } from 'src/app/data/service/animes.service';
 export class ListComponentComponent  implements OnInit {
 
   @Input() list : Anime[] = [];
+  @Output() updateList = new EventEmitter<number>();
   @Input() showTitle : boolean = true;
   @Input() showButtonList : boolean = true;
   @Input() customList : boolean = false;
@@ -28,7 +29,7 @@ export class ListComponentComponent  implements OnInit {
   }
 
   unfollowAnime(id : number){
-    this.animesService.removeFavAnime(id);
+    this.updateList.emit(id);
   }
 
   isFollowed(id : number){

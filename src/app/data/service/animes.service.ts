@@ -10,7 +10,7 @@ import { ApiResponse } from '../interface/ApiResponse';
 export class AnimesService {
   animesCache: Anime[] = [];
   favList : Anime[] = [];
-  linkApi: string = 'https://api.jikan.moe/v4/top/anime?page=2';
+  linkApi: string = 'https://api.jikan.moe/v4/top/anime?page=1';
 
   constructor(private http: HttpClient) {}
 
@@ -45,6 +45,6 @@ export class AnimesService {
   }
 
   removeFavAnime(id : number){
-    this.favList = this.favList.filter(anime => anime.mal_id !== id);
+    this.favList = this.favList.filter(data => data.mal_id !== id);
   }
 }
