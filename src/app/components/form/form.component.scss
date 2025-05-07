@@ -15,3 +15,16 @@
     --color: var(--light-color);
     transition: 1s;
 }
+
+span{
+    padding-left: 1.2rem;
+    font-weight: lighter;
+    color: var(--primary-color);
+    font-size: smaller;
+
+    .absolute{
+        position: absolute;
+        top:0;
+        right: 0;
+    }
+}

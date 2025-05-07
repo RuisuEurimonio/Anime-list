@@ -12,10 +12,11 @@ import { AnimesService } from 'src/app/data/service/animes.service';
 })
 export class FormComponent implements OnInit {
   types = ['anime', 'manga'];
-  genresList : String[] = ["Acción", "Aventura", "Comedia", "Drama", "Fantasía", "Ciencia Ficción", "Terror", "Misterio", "Romance", "Slice of Life", "Sobrenatural", "Psicológico", "Deportes", "Mecha", "Isekai", "Harem", "Magia", "Artes Marciales", "Militar", "Música"];
-  statusList : String[] = ["Finalizado", "En emisión"]
-  alertButtons = ['Aceptar'];
-  alertMessage = "Anime creado exitosamente.";
+  genresList : string[] = ["Acción", "Aventura", "Comedia", "Drama", "Fantasía", "Ciencia Ficción", "Terror", "Misterio", "Romance", "Slice of Life", "Sobrenatural", "Psicológico", "Deportes", "Mecha", "Isekai", "Harem", "Magia", "Artes Marciales", "Militar", "Música"];
+  statusList : string[] = ["Finalizado", "En emisión"]
+  alertButtons : string[] = ['Aceptar'];
+  alertMessage : string = "Valida los campos necesarios.";
+  formValid : boolean = true;
 
   mal_id = 0;
   url = '';
@@ -41,7 +42,7 @@ export class FormComponent implements OnInit {
       title:["", Validators.required],
       title_japanese:["",Validators.required],
       episodes:["",Validators.required],
-      status:[''],
+      status:['', Validators.required],
       score:[0,[Validators.required, Validators.min(0), Validators.max(5)]],
       imageUrl:["",[Validators.required, Validators.pattern(/^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w-.~:/?#[\]@!$&'()*+,;=]*)?\.(jpg|webp)$/i)]],
       synopsis:['',[Validators.required, Validators.minLength(100)]],
@@ -71,9 +72,14 @@ export class FormComponent implements OnInit {
   sendAnime(){
     if(this.formGroup?.valid){
       this.images = {jpg: {image_url: this.formGroup.get("imageUrl")?.value}, webp:{image_url: this.formGroup.get("imageUrl")?.value}}
-      this.alertMessage = "Anime creado correctamente";
       this.emitirData();
-      this.formGroup?.reset();    }
+      this.formGroup?.reset();  
+      this.alertMessage = "Anime creado correctamente";
+      this.genres = []
+      this.formValid = true;
+    }else{
+      this.formValid = false;
+    }
   }
 
   emitirData() {
@@ -91,5 +97,6 @@ export class FormComponent implements OnInit {
       genres: this.genres,
     };
     this.animesService.sendDataApi(this.anime);
+    
   }
 }

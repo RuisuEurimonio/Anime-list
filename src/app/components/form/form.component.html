@@ -19,6 +19,7 @@
                 label="Titulo"
                 labelPlacement="floating"
               ></ion-input>
+              <span class="absolute" *ngIf="!formValid && formGroup.get('title')?.errors"> Agrega un título. </span>
             </ion-item>
             <ion-item>
               <ion-input
@@ -29,6 +30,7 @@
                 label="Episodios"
                 labelPlacement="floating"
               ></ion-input>
+              <span class="absolute" *ngIf="!formValid && formGroup.get('episodes')?.errors"> Agrega la cantidad de episodios. </span>
             </ion-item>
             <ion-item>
               <ion-select
@@ -42,7 +44,8 @@
                 {{ option }}
               </ion-select-option>
             </ion-select>
-            </ion-item>
+            <span class="absolute" *ngIf="!formValid && formGroup.get('status')?.errors"> Selecciona el estado. </span>
+          </ion-item>
           </ion-list>
         </ion-col>
         <ion-col>
@@ -55,6 +58,7 @@
                 label="Titulo japones"
                 labelPlacement="floating"
               ></ion-input>
+              <span class="absolute" *ngIf="!formValid && formGroup.get('title_japanese')?.errors"> Agrega un título </span>
             </ion-item>
             <ion-item>
               <ion-input
@@ -65,6 +69,7 @@
                 label="Puntaje"
                 labelPlacement="floating"
               ></ion-input>
+              <span class="absolute" *ngIf="!formValid && formGroup.get('score')?.errors"> Agrega un puntaje valido. </span>
             </ion-item>
             <ion-item>
               <ion-input
@@ -75,6 +80,7 @@
                 label="Imagen"
                 labelPlacement="floating"
               ></ion-input>
+              <span class="absolute" *ngIf="!formValid && formGroup.get('imageUrl')?.errors"> Agrega la dirección de una imagen. </span>
             </ion-item>
           </ion-list>
         </ion-col>
@@ -143,6 +149,7 @@
           />
         </ion-col>
       </ion-row>
+      <span *ngIf="!formValid && formGroup.get('synopsis')?.errors"> Agrega una sinopsis. </span>
       <ion-row>
         <ion-col>
           <ion-textarea
@@ -154,6 +161,7 @@
           />
         </ion-col>
       </ion-row>
+      <span *ngIf="!formValid && formGroup.get('background')?.errors"> Agrega un trasfondo. </span>
     </ion-grid>
     <ion-button class="custom_button" expand="full" (click)="sendAnime()" id="present-alert"> Crear. </ion-button>
   </form>
