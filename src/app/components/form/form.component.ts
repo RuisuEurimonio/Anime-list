@@ -90,6 +90,6 @@ export class FormComponent implements OnInit {
       background: this.formGroup?.get("background")?.value,
       genres: this.genres,
     };
-    this.animesService.addAnimeToCache(this.anime);
+    this.animesService.sendDataApi(this.anime);
   }
 }

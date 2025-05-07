@@ -11,6 +11,7 @@ export class AnimesService {
   animesCache: Anime[] = [];
   favList : Anime[] = [];
   linkApi: string = 'https://api.jikan.moe/v4/top/anime?page=1';
+  linkFakeApi : string = "https://fakestoreapi.com/products"
 
   constructor(private http: HttpClient) {}
 
@@ -46,5 +47,14 @@ export class AnimesService {
 
   removeFavAnime(id : number){
     this.favList = this.favList.filter(data => data.mal_id !== id);
+  }
+
+  sendDataApi(anime:Anime){
+    this.http.post(this.linkFakeApi, anime).subscribe(data => {
+      if(data){
+        console.log(data);
+        this.addAnimeToCache(anime)
+      }
+    })
   }
 }
