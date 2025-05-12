@@ -6,11 +6,13 @@ import { IonicModule } from '@ionic/angular';
 import { ListComponentComponent } from './list-component/list-component.component';
 import { FormComponent } from './form/form.component';
 import { RouterLink } from '@angular/router';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     ListComponentComponent,
-    FormComponent
+    FormComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { RouterLink } from '@angular/router';
   ],
   exports: [
     ListComponentComponent,
-    FormComponent
+    FormComponent,
+    ModalComponent
   ]
 })
 export class ComponentsModule {}

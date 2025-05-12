@@ -18,17 +18,22 @@ export class ListComponentComponent  implements OnInit {
   @Input() customList : boolean = false;
   @Input() otherList : Anime[] = [];
 
+  animeToSend : Anime | null = null;
+  modalIsOpen : boolean = false;
+
   constructor(private animesService : AnimesService) { }
 
   ngOnInit() {
     
   }
 
-  followAnime(anime : Anime){
+  followAnime(event : MouseEvent, anime : Anime){
+    event.stopPropagation();
     this.animesService.addFavAnimes(anime);
   }
 
-  unfollowAnime(id : number){
+  unfollowAnime(event : MouseEvent, id : number){
+    event.stopPropagation();
     this.updateList.emit(id);
   }
 
@@ -36,4 +41,13 @@ export class ListComponentComponent  implements OnInit {
     return this.animesService.getFavAnimes().some(anime => anime.mal_id == id);
   }
 
+  updateModalIsOpen(value : boolean, anime : Anime){
+    this.modalIsOpen = value
+    this.animeToSend = anime;
+  }
+
+  closeModal(){
+    this.animeToSend = null;
+    this.modalIsOpen = false;
+  }
 }
