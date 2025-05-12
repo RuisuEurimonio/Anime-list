@@ -30,8 +30,7 @@ export class MyListPage implements OnInit {
     
   }
 
-  unfollowAnime(id : number){
-    this.animesService.removeFavAnime(id);
+  unfollowAnime(){
     this.listMyAnimes = this.animesService.getFavAnimes();
   }
 

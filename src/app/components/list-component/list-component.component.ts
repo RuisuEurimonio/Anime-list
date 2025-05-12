@@ -12,7 +12,7 @@ import { AnimesService } from 'src/app/data/service/animes.service';
 export class ListComponentComponent  implements OnInit {
 
   @Input() list : Anime[] = [];
-  @Output() updateList = new EventEmitter<number>();
+  @Output() updateList = new EventEmitter<void>();
   @Input() showTitle : boolean = true;
   @Input() showButtonList : boolean = true;
   @Input() customList : boolean = false;
@@ -34,7 +34,8 @@ export class ListComponentComponent  implements OnInit {
 
   unfollowAnime(event : MouseEvent, id : number){
     event.stopPropagation();
-    this.updateList.emit(id);
+    this.animesService.removeFavAnime(id);
+    this.updateList.emit();
   }
 
   isFollowed(id : number){
@@ -48,6 +49,6 @@ export class ListComponentComponent  implements OnInit {
 
   closeModal(){
     this.animeToSend = null;
-    this.modalIsOpen = false;
+    this.modalIsOpen = false
   }
 }
